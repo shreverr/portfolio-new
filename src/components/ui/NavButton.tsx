@@ -10,20 +10,21 @@ interface NavButtonProps extends navLink {
 }
 
 const NavButton: FC<NavButtonProps> = ({ name, href }) => {
+  const [isSelected, setIsSelected] = useState(false)
+  
+  const handleClick = (event: React.SyntheticEvent) => {
+    event.preventDefault()
+    setIsSelected(isSelected ? false : true)
+    gsap.to(window, { duration: 1, scrollTo: href, ease: "expo.inOut", })
+  }
+
   useEffect(() => {
     gsap.registerPlugin(ScrollToPlugin)
   })
   
-  const [isSelected, setIsSelected] = useState(false)
-  const handleClick = (event: React.SyntheticEvent) => {
-    // event.preventDefault()
-    setIsSelected(isSelected ? false : true)
-    gsap.to(window, { duration: 1, scrollTo: href })
-  }
-
   return (
     <a
-      // href={href}
+      href={href}
       onClick={handleClick}
       className={`flex items-center justify-center whitespace-nowrap text-white 
                 px-10 h-full rounded-full py-1 text-md 
