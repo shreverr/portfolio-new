@@ -10,7 +10,7 @@ const NavBar: FC<NavBarProps> = ({ }) => {
   const navLinks: navLink[] = [
     {
       name: 'HOME',
-      href: '#'
+      href: '#home'
     },
     {
       name: 'ABOUT ME',

@@ -1,14 +1,15 @@
 import { FC } from 'react'
+import Section from '../ui/Section'
 
 interface HeroSectionProps {
-  
+
 }
 
-const HeroSection: FC<HeroSectionProps> = ({}) => {
+const HeroSection: FC<HeroSectionProps> = ({ }) => {
   return (
-    <div className='text-9xl'>
+    <Section id='home'>
       Hero Section
-    </div>
+    </Section>
   )
 }
 
